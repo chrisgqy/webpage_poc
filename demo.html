@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fullscreen Canvas</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    canvas {
+      display: block;
+      background-color: black;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="fullscreenCanvas"></canvas>
+
+  <script>
+    const canvas = document.getElementById('fullscreenCanvas');
+    const resizeCanvas = () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    };
+
+    // Resize initially and on window resize
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
+  </script>
+</body>
+</html>
