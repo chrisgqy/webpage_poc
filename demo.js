@@ -16,11 +16,11 @@ class Particle {
         this.x += this.directionX
     }
     draw() {
-        ctx.beginPath()
-        ctx.arc(this.x, this.y, 2, 0, Math.PI * 2)
-        ctx.fillStyle = "white"
-        ctx.fill()
-    }
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, 6, 0, Math.PI * 2); // Increased size from 2 to 4
+      ctx.fillStyle = "rgba(0, 170, 255, 0.9)"; // Dark blue with higher opacity
+      ctx.fill();
+  }
 }
 
 function createParticle() {
@@ -42,12 +42,11 @@ function handleParticle() {
             dy = particlesArray[i].y - particlesArray[j].y
             long = Math.sqrt(Math.pow(dx, 2) + Math.pow(dy, 2))
             if (long < 100) {
-                ctx.beginPath()
-                ctx.strokeStyle = "rgba(255,255,255," + (1 - long / 200) + ")"
-                ctx.moveTo(particlesArray[i].x, particlesArray[i].y)
-                ctx.lineTo(particlesArray[j].x, particlesArray[j].y)
-                ctx.lineWidth = 1
-                ctx.stroke()
+                ctx.strokeStyle = "rgba(0, 170, 255," + (1 - long / 100) + ")"; // Dark blue with opacity based on distance
+                ctx.moveTo(particlesArray[i].x, particlesArray[i].y);
+                ctx.lineTo(particlesArray[j].x, particlesArray[j].y);
+                ctx.lineWidth = 2;
+                ctx.stroke();
             }
         }
     }
