@@ -1,0 +1,15 @@
+---
+title: "Demo Page"
+format: html
+---
+
+```{=html}
+<!-- Include CSS -->
+<link rel="stylesheet" href="www/styles.css">
+
+<!-- Your HTML content -->
+<div id="particles-js"></div>
+<h1>Hello with particles!</h1>
+
+<!-- Include JavaScript -->
+<script src="www/demo.js"></script>

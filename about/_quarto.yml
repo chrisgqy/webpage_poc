@@ -1,0 +1,13 @@
+project:
+  type: website
+  resources:
+    - www/**
+
+website:
+  title: "My Quarto Site"
+  navbar:
+    left:
+      - text: Home
+        href: index.qmd
+      - text: Demo
+        href: www/demo.html
